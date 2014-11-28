@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="naT-yx-ajc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="RootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Today's Weight" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZH-Xo-xtv">
+                                <rect key="frame" x="16" y="89" width="568" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="TD1-NM-nKn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Rfr-EK-YRD"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWJ-uh-Fq9">
+                                <rect key="frame" x="283" y="183" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4n9-fQ-iA7"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveWeight:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PEW-4U-qmg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="pWJ-uh-Fq9" secondAttribute="centerX" id="EbD-35-Tqw"/>
+                            <constraint firstItem="NZH-Xo-xtv" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="25" id="IyQ-p7-zt4"/>
+                            <constraint firstItem="NZH-Xo-xtv" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="dww-Am-pLm"/>
+                            <constraint firstItem="NZH-Xo-xtv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="hix-ld-Jeu"/>
+                            <constraint firstItem="pWJ-uh-Fq9" firstAttribute="top" secondItem="NZH-Xo-xtv" secondAttribute="bottom" constant="37" id="s90-D6-vDO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xDD-mh-iOG"/>
+                    <connections>
+                        <outlet property="weightTextField" destination="NZH-Xo-xtv" id="TI1-Qr-UG6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="997" y="370"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1ll-Sc-mwv">
+            <objects>
+                <navigationController id="naT-yx-ajc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KAL-q6-zb5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="JWq-1P-Zms"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Xv-aJ-U2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="280" y="370"/>
+        </scene>
+    </scenes>
+</document>
